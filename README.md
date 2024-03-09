@@ -129,7 +129,20 @@ The above example is a *class utility*. It changes the value of the API of the `
 Instead of class utilities, you can also use `data-*` properties to invoke a ‘modifier’ (in BEM-terms)on the API values. This is an ideal way to invoke changes on multiple API values. 
 
 ```css
-.button { ... }
+.button {
+	--button-bg: white;
+	--button-text: black;
+	background-color: var(--button-bg);
+	border: 1px solid transparent;
+	color: var(--button-text);
+}
+
+button:hover {
+	border-color: var(--button-bg);
+	background-color: var(--button-text);
+	color: var(--button-bg); 
+}
+
 .butten[data-variant="primary"] {
 	--button-bg: green;
 	--button-text: white;
